@@ -6,7 +6,7 @@ import {getForecast} from '../action-creators/index';
 let Button=({getWeather, getForecast})=>(
     <div>
         <button className="btn btn-lg btn-success" type="button" onClick={getWeather}>Today</button>
-        <span className="pl-2 pr-2">or</span>
+        <span className="pl-2 pr-2"><bold>or</bold></span>
         <button className="btn btn-lg btn-success" type="button" onClick={getForecast}>5 day forecast</button>
     </div>  
 )

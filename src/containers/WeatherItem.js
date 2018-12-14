@@ -4,9 +4,10 @@ import { connect } from 'react-redux'
 let WeatherItem = ({ currentWeather }) => (
 
 currentWeather ?
-    <div className="row justify-content-center">
-        <div>
-            <h5>Today at {currentWeather.name}</h5>
+    <div className="row justify-content-center weather-widget">
+        <div className="border border-dark rounded container">
+            <h5>Today</h5>
+            <h6>{currentWeather.name}</h6>
             <h6>{currentWeather.weather[0].main}</h6>
             <img src={"http://openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png" } alt="" />
             <p><bold>{currentWeather.main.temp_max}/{currentWeather.main.temp_min}</bold></p>
@@ -21,6 +22,7 @@ currentWeather ?
 
 const mapStateToProps = (state) => ({
     currentWeather: state.weather,
+    forecast: state.forecast
     })
 
 WeatherItem = connect(mapStateToProps,null)(WeatherItem)

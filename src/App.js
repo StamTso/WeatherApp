@@ -3,27 +3,31 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './containers/SearchBar';
 import WeatherItem from './containers/WeatherItem'
-import Loading from './containers/Loading'
 
 class App extends Component{
   render(){
-    return(
-      <div className="container">
-        <div className="pt-4">
-          <div className="row justify-content-center col-lg">
-          <SearchBar />
-          </div>
+    return(    
+      <main>
+        <div className="App">
           <div className="row justify-content-center pt-4">
-            <span>Press button to get the latest weather status</span>
+            <header className="col-12 App-header">Rain Predictor</header>
           </div>
-          <div className="row justify-content-center">
-          <WeatherItem />
-          </div>
-          
-          <Loading />
-          
-        </div>      
-      </div>
+          <div className="pt-4">
+            <div className="row justify-content-center">
+              <div className="col-sm-10">
+                <SearchBar />
+              </div>     
+            </div>
+         
+            <div className="row justify-content-center pt-2">
+              <WeatherItem />
+            </div>      
+          </div>           
+        </div>
+        <footer className="footer navbar-fixed-bottom"><div>Made by Stamatis Tsolakidis</div></footer> 
+      </main>
+      
+
     )
   }
 }

@@ -1,7 +1,5 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
 
-
-
 let city = 'Vilnius';
 let route ='weather';
 const apiKey = 'd794b52f23c9a9729ea948f1f855a8df';
