@@ -4,7 +4,6 @@ import './App.css';
 import SearchBar from './containers/SearchBar';
 import WeatherItem from './containers/WeatherItem'
 import Loading from './containers/Loading'
-// import SearchBar from './containers/SearchBar'
 
 class App extends Component{
   render(){
@@ -13,6 +12,9 @@ class App extends Component{
         <div className="pt-4">
           <div className="row justify-content-center col-lg">
           <SearchBar />
+          </div>
+          <div className="row justify-content-center pt-4">
+            <span>Press button to get the latest weather status</span>
           </div>
           <div className="row justify-content-center">
           <WeatherItem />

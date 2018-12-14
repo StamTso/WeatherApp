@@ -13,9 +13,7 @@ currentWeather ?
         </div>      
     </div>
     :  
-        <div className="justify-content-center pt-4">
-            <span>Press button to get the latest weather status</span>
-        </div>
+       null
     
 
 );

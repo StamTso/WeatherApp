@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getWeather } from '../action-creators/index';
 import {getForecast} from '../action-creators/index';
 
-let Button=({getWeather})=>(
+let Button=({getWeather, getForecast})=>(
     <div>
         <button className="btn btn-lg btn-success" type="button" onClick={getWeather}>Today</button>
         <span className="pl-2 pr-2">or</span>
