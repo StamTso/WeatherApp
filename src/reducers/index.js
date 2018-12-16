@@ -1,10 +1,10 @@
 /*
-Handles the current weather object
+Reducer for the Get Weather/Forecast actions
  */
 const weatherReducer = (state = {}, action) => {
     switch (action.type) {
       case 'GET_WEATHER':
-          return { ...state, loading: true };
+          return { ...state, city: action.value, loading: true };
       case 'WEATHER_RECEIVED':
           return { ...state, weather: action.json, loading: false };
       case 'GET_FORECAST':

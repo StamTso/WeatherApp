@@ -6,6 +6,7 @@ import Loading from './Loading';
 
 
 class SearchBar extends Component{
+    // Defines a search property type string in the state
     constructor() {
         super();
         this.state = {
@@ -13,11 +14,18 @@ class SearchBar extends Component{
         };
     };
 
+    // Listening to the search bar and limiting the string length to 70 characters.
     updateSearch(event){
         this.setState({search: event.target.value.substr(0,70)});
     };
-
+    
     render(){
+        let cities = require('../cityList');
+        let filteredCities = cities.filter(
+            (city) => {
+                return city.name.toLowerCase().indexOf(this.state.search) !== -1;
+            }           
+        );
         return(
             <div className="col-12">
             <form className="card card-sm">
@@ -33,7 +41,7 @@ class SearchBar extends Component{
                                placeholder="Search (Example: London)" />
                     </div> 
                     <div className="col-4 pl-2">
-                    <Button />
+                    <Button city={filteredCities}/>
                     </div>  
                     <div className="col-2">
                     <Loading />

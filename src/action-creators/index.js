@@ -1,7 +1,15 @@
-export const getWeather = () => ({
+/*
+ Fetch current weather data
+*/
+export const getWeather = (e, city) => ({
     type: 'GET_WEATHER',
+    value: city
 });
 
-export const getForecast = () => ({
+/*
+ Fetch 5-day forecast data
+*/
+export const getForecast = (e, city) => ({
     type: 'GET_FORECAST',
+    value: city
 });
