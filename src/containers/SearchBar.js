@@ -40,9 +40,13 @@ class SearchBar extends Component{
                                onChange={this.updateSearch.bind(this)}
                                placeholder="Search (Example: London)" />
                     </div> 
-                    <div className="col-4 pl-2">
-                    <Button city={filteredCities}/>
+                    <div className="col-2">
+                    <Button city={filteredCities} searchType="weather" description="Today"/>
                     </div>  
+                    <span className="font-weight-bold">OR</span>
+                    <div className="col-2">
+                    <Button city={filteredCities} searchType='forecast' description="5 Days"/>
+                    </div>
                     <div className="col-2">
                     <Loading />
                     </div>                                

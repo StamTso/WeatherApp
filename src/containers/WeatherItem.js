@@ -21,8 +21,7 @@ currentWeather ?
 
 
 const mapStateToProps = (state) => ({
-    currentWeather: state.weather,
-    forecast: state.forecast
+    currentWeather: state.weather
     })
 
 WeatherItem = connect(mapStateToProps,null)(WeatherItem)
