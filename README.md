@@ -1,3 +1,3 @@
-This project is created as part of a given interview task. It fetches weather forecast data from the openweathermap.org API. 
+Weather App is a singe page application developed on React JS. It fetches weather forecast data from the openweathermap.org API. 
 
 More info to come soon...
