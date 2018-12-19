@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   background-image: url('./background.jpg');
 }
 
@@ -11,10 +10,15 @@
 .App-header {
   min-height: 25vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: xx-large;
+  align-items: left;
+  justify-content: left;
+  font-size: 3em;
   color: white;
+}
+
+.App-footer{
+  text-align: right; 
+  padding-top: 70px;
 }
 
 .App-link {
@@ -24,13 +28,9 @@
 .weather-widget{
   background-color: #2374c0;
   color: white;
+  margin-top: 3em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonRow{
+  margin-top: 1em;
 }

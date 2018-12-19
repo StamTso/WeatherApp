@@ -7,10 +7,10 @@ import WeatherItem from './containers/WeatherItem'
 class App extends Component{
   render(){
     return(    
-      <main>
-        <div className="App">
-          <div className="row justify-content-center pt-4">
-            <header className="col-12 App-header">Rain Predictor</header>
+      <main className="App">
+        <div>
+          <div className="row pt-4">
+            <header className="col-4 App-header">Rain Predictor</header>
           </div>
           <div className="pt-4">
             <div className="row justify-content-center">
@@ -24,7 +24,9 @@ class App extends Component{
             </div>      
           </div>           
         </div>
-        <footer className="footer navbar-fixed-bottom"><div>Made by Stamatis Tsolakidis</div></footer> 
+        <footer className="App-footer footer">
+          <div>Copyright <span>&copy;</span> 2018 Stamatis Tsolakidis</div>
+        </footer> 
       </main>
       
 

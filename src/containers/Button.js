@@ -4,7 +4,7 @@ import { getWeather } from '../action-creators/index';
 
 let Button=({getWeather, city, searchType, description})=>(
     <div>
-        <button className="btn btn-lg btn-success" type="button" onClick={(e) => getWeather(e, city, searchType)}>{description}</button>      
+        <button className="btn btn-lg btn-success col-12" type="button" onClick={(e) => getWeather(e, city, searchType)}>{description}</button>      
     </div>  
 )
 const mapDispatchToProps = {
