@@ -3,20 +3,24 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './containers/SearchBar';
 import WeatherItem from './containers/WeatherItem'
+import Loading from './containers/Loading';
 
 class App extends Component{
   render(){
     return(    
       <main className="App">
         <div>
-          <div className="row pt-4">
-            <header className="col-4 App-header">Rain Predictor</header>
+          <div className=" App-header row pt-4 justify-content-center">
+            <header className="col-4">Weather App</header>
           </div>
-          <div className="pt-4">
+          <div className="App-search">
             <div className="row justify-content-center">
-              <div className="col-sm-10">
+              <div className="col-11">
                 <SearchBar />
               </div>     
+              <div className="col-1">
+                    <Loading />
+                </div> 
             </div>
          
             <div className="row justify-content-center pt-2">

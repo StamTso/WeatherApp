@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
+import Button from './Button';
 
+// Holds the logic for rendering retrived data in weather cards accordingly
 class WeatherItem extends Component{
     /**
      * Checks if weather data are for current weather
@@ -25,7 +27,7 @@ class WeatherItem extends Component{
         // filters and renders forecast for 5 days
         if (this.isForecast()) {
             let filteredForecast = this.props.currentWeather.list.filter(
-                (forecast) => {return forecast.dt_txt.includes("00:00:00")});
+                (forecast) => {return forecast.dt_txt.includes("12:00:00")});
             const cityName = this.props.currentWeather.city.name;
             return(
                 filteredForecast ?
@@ -36,14 +38,21 @@ class WeatherItem extends Component{
                             <h6>{cityName}</h6>
                             <h6>{forecast.weather[0].main}</h6>
                             <img src={"http://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png" } alt="" />
-                            <p className="bold">{forecast.main.temp_max}/{forecast.main.temp_min}</p>
+                            <p className="bold">{~~forecast.main.temp_max}/{~~forecast.main.temp_min}</p>
                         </div>;
                         
                     })}
+                    <div>
+                        <Button desctription="Pin forecast"/>
+                    </div>
                 </div>
                 
                 :
-                null
+                <div>
+                    <span><p>Ooops..!</p></span>
+                    <span>Our search returned no results for the city you typed.</span>
+                    <span>Spell the city name correctly or search for another city and try again!</span>
+                </div>
             )
         } 
         

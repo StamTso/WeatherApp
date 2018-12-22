@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 //import { connect } from 'react-redux';
 import Button from './Button';
-import Loading from './Loading';
 
 
-
+// Holds the rendering and actions of the search bar
 class SearchBar extends Component{
     // Defines a search property type string in the state
     constructor() {
@@ -26,7 +25,7 @@ class SearchBar extends Component{
         // fiter list of city with the string from the searchbar
         let filteredCities = cities.filter(
             (city) => {
-                return city.name.toLowerCase().indexOf(this.state.search) !== -1;
+                return city.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
             }           
         );
         return(
@@ -36,25 +35,22 @@ class SearchBar extends Component{
                     <div className="col-1">
                         <i className="fas fa-search h4 text-body"></i>
                     </div>                                  
-                    <div className="col-6">
-                        <input className="form-control form-control-lg form-control-borderless" 
+                    <div className="col-8">
+                        <input className="form-control form-control-lg form-control-borderless inputBar" 
                                type="search" 
                                value={this.state.search}
                                onChange={this.updateSearch.bind(this)}
                                placeholder="Search (Example: London)" />
-                    </div>                   
-                    <div className="col-2">
-                    <Loading />
-                    </div>                                
-                </div>
+                    </div>                                                                     
+                </div>                
             </form>
             <div className="row buttonRow">
                 <div className="col-4">
-                    <Button city={filteredCities} searchType="weather" description="Today"/>
+                    <Button city={this.state.search === '' ? null : filteredCities} searchType="weather" description="Today"/>
                 </div>  
                 <span className="font-weight-bold">OR</span>
                 <div className="col-4">
-                    <Button city={filteredCities} searchType='forecast' description="5 Days"/>
+                    <Button city={this.state.search === '' ? null : filteredCities} searchType='forecast' description="5 Days"/>
                 </div>
             </div>
         </div>

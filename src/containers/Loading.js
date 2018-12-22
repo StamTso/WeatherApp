@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
+// Loading spinner visual for SearchBar
 let Loading = ({ loading }) => (
     loading ?
     <div>
-       <h4>LOADING</h4>
+       <p>LOADING</p>
     </div> :
     null
     );

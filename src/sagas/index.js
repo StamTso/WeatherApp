@@ -8,9 +8,14 @@ const openWeatherMapUrl = 'http://api.openweathermap.org/data/2.5/';
 function* fetchWeather(fetchWeather) {    
     let cities = fetchWeather.value;
     let searchString = fetchWeather.searchString
-    const json = cities[0] ? yield fetch(openWeatherMapUrl + searchString +'?id=' + cities[0].id + '&units=metric&APPID='+ apiKey)
-        .then(response => response.json(), ) : null;    
-    yield put({ type: "WEATHER_RECEIVED", json: json, });
+    const json =  cities !== null  && cities.length > 0  ? yield fetch(openWeatherMapUrl + searchString +'?id=' + cities[0].id + '&units=metric&APPID='+ apiKey)
+        .then(response => response.json(), ) : null;  
+    if(json !== null)  {
+        return yield put({ type: "WEATHER_RECEIVED", json: json, });
+    }
+    else{
+        return yield put({ type: "WEATHER_ERROR", error: "No city was found", });
+    }
 }
 
 function* actionWatcher() {
