@@ -42,11 +42,11 @@ class WeatherItem extends Component{
                 <div className="row">
                     {filteredForecast.map(function(forecast, index){
                         return <div className="weather-widget col-2 border border-dark rounded container" key={index}>
-                            <h5>{new Date(forecast.dt_txt).toDateString()}</h5>
+                            <h6>{new Date(forecast.dt_txt).toDateString()}</h6>
                             <h6>{cityName}</h6>
                             <h6>{forecast.weather[0].main}</h6>
                             <img src={"http://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png" } alt="" />
-                            <p className="bold">{~~forecast.main.temp_max}/{~~forecast.main.temp_min}</p>
+                            <p className="bold">{~~forecast.main.temp_max}&deg;C  {~~forecast.main.temp_min}&deg;C</p>
                         </div>;
                         
                     })}
@@ -66,11 +66,11 @@ class WeatherItem extends Component{
                 this.props.currentWeather ?
                 <div className="row justify-content-center weather-widget">
                     <div className="border border-dark rounded container">
-                        <h5>{this.getDate()}</h5>
+                        <h6>{this.getDate()}</h6>
                         <h6>{this.props.currentWeather.name}</h6>
                         <h6>{this.props.currentWeather.weather[0].main}</h6>
                         <img src={"http://openweathermap.org/img/w/" + this.props.currentWeather.weather[0].icon + ".png" } alt="" />
-                        <p className="bold">{this.props.currentWeather.main.temp_max}/{this.props.currentWeather.main.temp_min}</p>
+                        <p className="bold">{this.props.currentWeather.main.temp_max}&deg;C  {this.props.currentWeather.main.temp_min}&deg;C</p>
                     </div>      
                 </div>
                 :

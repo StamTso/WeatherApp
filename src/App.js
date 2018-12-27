@@ -26,16 +26,16 @@ class App extends Component{
               </div>                  
             </div>
          
-            <div className="row justify-content-center pt-2">
+            <div className="row col-12 justify-content-center pt-2">
               <WeatherItem />
             </div>      
-            <div className="row justify-content-center pt-2">
+            <div className="row col-12 justify-content-center pt-2">
               <PinWeatherItem />
             </div>
           </div>           
         </div>
         <footer className="App-footer footer">
-          <div>Copyright <span>&copy;</span> 2018 Stamatis Tsolakidis</div>
+          <div>Copyright <span>&copy;</span> 2018 Stamatios Tsolakidis</div>
         </footer> 
       </main>
       

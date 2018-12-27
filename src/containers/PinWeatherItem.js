@@ -23,7 +23,7 @@ class PinWeatherItem extends Component{
                     {pinnedData.map(function(dataObject, index){
                         let city = dataObject.city;
                         return (
-                        <div className="pinnedWidgetRow" key={index}>
+                        <div className="pinnedWidgetRow  col-12" key={index}>
                             <div className="row">                                                              
                                 <div className="col-2">
                                     <span><h4>{city.name}</h4></span>
@@ -39,7 +39,7 @@ class PinWeatherItem extends Component{
                                 <h5>{new Date(forecast.dt_txt).toDateString()}</h5>
                                 <h6>{forecast.weather[0].main}</h6>
                                 <img src={"http://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png" } alt="" />
-                                <p className="bold">{~~forecast.main.temp_max}/{~~forecast.main.temp_min}</p>
+                                <p className="bold">{~~forecast.main.temp_max}&deg;C {~~forecast.main.temp_min}&deg;C</p>
                                 </div>;
                             })
                         }
