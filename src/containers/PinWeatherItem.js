@@ -1,26 +1,36 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Button from './Button';
 
-
+// Holds and displays the pinned data
 class PinWeatherItem extends Component{
 
+    // Checks if there are pinned data sets
     hasPinnedData(){
         return this.props.pinnedData && this.props.pinnedData.length > 0;
     };
 
     
     render(){
+        // If there are pinned data then display them
         if (this.hasPinnedData()) {
            let pinnedData = this.props.pinnedData;
             return(
                 pinnedData ?
+                // Iterate through the pinned data array 
+                //and the iterate through the forecast array of each pinned object
                 <div>
                     {pinnedData.map(function(dataObject, index){
                         let city = dataObject.city;
                         return (
-                        <div className="pinnedWidgetRow"  key={index}>
-                            <div className="row">
-                                <span><h4>{city}</h4></span>
+                        <div className="pinnedWidgetRow" key={index}>
+                            <div className="row">                                                              
+                                <div className="col-2">
+                                    <span><h4>{city.name}</h4></span>
+                                </div>
+                                <div className="col-4">
+                                    <Button city={city} searchType="forecast" description="Refresh Weather Data"/>
+                                </div>
                             </div>
                             <div className="row">
                             {
@@ -34,7 +44,8 @@ class PinWeatherItem extends Component{
                             })
                         }
                             </div>                       
-                        </div>       )                                   
+                        </div>
+                        )                                   
                     })}
                 </div>
                 
@@ -46,7 +57,7 @@ class PinWeatherItem extends Component{
                 </div>
             )
         } 
-        
+        // If pinnedData array is empty then don't display anything
         else{
             return (
                 null
@@ -55,6 +66,7 @@ class PinWeatherItem extends Component{
     }
 }
 
+// connect the pinnedData to the state pinnedData and connect component
 const mapStateToProps = (state) => ({
     pinnedData: state.pinDataReducer.pinnedData
     })

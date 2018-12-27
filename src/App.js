@@ -44,38 +44,3 @@ class App extends Component{
   }
 }
 export default App;
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             Hello from the JS entry point!
-//           </p>
-//           <div>
-//          <pre><span>{this.props.testReducer.result}</span></pre>
-//         <button onClick={this.testAction}>Say Hello</button>
-//       </div>   
-//         </header>  
-//       </div>    
-//     );
-//   }
-//   testAction = (event) => {
-//     this.props.testAction();
-//   }
-// }
-// const mapStateToProps = state => ({
-//   ...state
-//  });
-
-//  const mapDispatchToProps = dispatch => ({
-//   testAction: () => dispatch(testAction())
-//  });
-// export default connect(mapStateToProps, mapDispatchToProps) (App);
-
-
-
-
-

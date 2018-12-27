@@ -14,6 +14,11 @@ export const weatherReducer = (state = {}, action) => {
      }
   };
 
+  /**
+   * Handles the Pin Data action
+   * @param {*} state //The current App state with an added pinnedData array of objects
+   * @param {*} action //The data of the PIN_DATA action
+   */
 export const pinDataReducer = (state = {pinnedData:[]}, action) => {
       switch (action.type){
           case 'PIN_DATA':

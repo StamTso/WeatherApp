@@ -13,6 +13,9 @@ class WeatherItem extends Component{
               && this.props.currentWeather.list.length > 0;
     };
 
+    /**
+     * Checks if there are pinned data sets
+     */
     hasPinnedData(){
         return this.props.pinnedData && this.props.pinnedData.length > 0;
     };
@@ -32,7 +35,8 @@ class WeatherItem extends Component{
         if (this.isForecast()) {
             let filteredForecast = this.props.currentWeather.list.filter(
                 (forecast) => {return forecast.dt_txt.includes("12:00:00")});
-            const cityName = this.props.currentWeather.city.name;
+            const selectedCity = this.props.currentWeather.city;
+            const cityName = selectedCity.name;
             return(
                 filteredForecast ?
                 <div className="row">
@@ -47,16 +51,12 @@ class WeatherItem extends Component{
                         
                     })}
                     <div>
-                        <PinButton description="Pin Data" forecastData={filteredForecast} city={cityName}/>
+                        <PinButton description="Pin Data" forecastData={filteredForecast} city={selectedCity}/>
                     </div>
                 </div>
                 
                 :
-                <div>
-                    <span><p>Ooops..!</p></span>
-                    <span>Our search returned no results for the city you typed.</span>
-                    <span>Spell the city name correctly or search for another city and try again!</span>
-                </div>
+                null
             )
         } 
         

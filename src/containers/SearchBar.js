@@ -48,7 +48,9 @@ class SearchBar extends Component{
                 <div className="col-4">
                     <Button city={this.state.search === '' ? null : filteredCities} searchType="weather" description="Today"/>
                 </div>  
-                <span className="font-weight-bold">OR</span>
+                <div className="textSpan">
+                    <span className="font-weight-bold">OR</span>
+                </div>
                 <div className="col-4">
                     <Button city={this.state.search === '' ? null : filteredCities} searchType="forecast" description="5 Days"/>
                 </div>

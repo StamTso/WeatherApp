@@ -6,11 +6,18 @@ const openWeatherMapUrl = 'http://api.openweathermap.org/data/2.5/';
 
 
 function* fetchWeather(fetchWeather) {    
-    let cities = fetchWeather.value;
+    let cities = fetchWeather.value.length > 0 ? fetchWeather.value[0].id : fetchWeather.value.id;
     let searchString = fetchWeather.searchString
-    const json =  cities !== null  && cities.length > 0  ? yield fetch(openWeatherMapUrl + searchString +'?id=' + cities[0].id + '&units=metric&APPID='+ apiKey)
-        .then(response => response.json(), ) : null;  
-    if(json !== null)  {
+    const json = yield fetch(openWeatherMapUrl + searchString +'?id=' + cities + '&units=metric&APPID='+ apiKey)
+        .then(response => {
+            if(response.status >= 200 && response.status <= 300){
+                return response.json();
+            }
+            else{
+                return 'ERROR';
+            }
+        });  
+    if(json !== 'ERROR')  {
         return yield put({ type: "WEATHER_RECEIVED", json: json, });
     }
     else{
