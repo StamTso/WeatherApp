@@ -10,6 +10,7 @@ let Loading = ({ loading }) => (
     null
     );
 
+// Take the loading value from the state and connect container
 const mapStateToProps = (state) => ({loading: state.loading})
 Loading = connect(mapStateToProps,null)(Loading)
 

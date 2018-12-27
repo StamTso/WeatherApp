@@ -8,6 +8,8 @@ let Button=({getWeather, city, searchType, description})=>(
         <button className="btn btn-lg col-12 App-button" type="button" onClick={(e) => getWeather(e, city, searchType)}>{description}</button>      
     </div>  
 )
+
+// Dispatch getWeather action and connect Button container
 const mapDispatchToProps = {
     getWeather: getWeather
 };
