@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import Button from './Button';
+import PinButton from './PinButton';
 
 // Holds the logic for rendering retrived data in weather cards accordingly
 class WeatherItem extends Component{
@@ -10,7 +10,11 @@ class WeatherItem extends Component{
      */
     isForecast(){
        return this.props.currentWeather && this.props.currentWeather.list 
-              && this.props.currentWeather.list.length > 0
+              && this.props.currentWeather.list.length > 0;
+    };
+
+    hasPinnedData(){
+        return this.props.pinnedData && this.props.pinnedData.length > 0;
     };
 
     /**
@@ -43,7 +47,7 @@ class WeatherItem extends Component{
                         
                     })}
                     <div>
-                        <Button desctription="Pin forecast"/>
+                        <PinButton description="Pin Data" forecastData={filteredForecast} city={cityName}/>
                     </div>
                 </div>
                 
@@ -77,7 +81,8 @@ class WeatherItem extends Component{
 }
 
 const mapStateToProps = (state) => ({
-    currentWeather: state.weather
+    currentWeather: state.weatherReducer.weather,
+    pinnedData: state.pinDataReducer.pinnedData
     })
 
 WeatherItem = connect(mapStateToProps,null)(WeatherItem)

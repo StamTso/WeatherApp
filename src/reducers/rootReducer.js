@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import weatherReducer from './index'
+import {weatherReducer,pinDataReducer}  from './index'
 
 export default combineReducers({
-    weatherReducer
+    weatherReducer,
+    pinDataReducer
    });

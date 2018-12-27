@@ -31,7 +31,7 @@ class SearchBar extends Component{
         return(
             <div className="col-10">
             <form className="card card-sm">
-                <div className="card-body row no-gutters align-items-center">
+                <div className="card-body row no-gutters align-items-center searchCard">
                     <div className="col-1">
                         <i className="fas fa-search h4 text-body"></i>
                     </div>                                  
@@ -50,7 +50,7 @@ class SearchBar extends Component{
                 </div>  
                 <span className="font-weight-bold">OR</span>
                 <div className="col-4">
-                    <Button city={this.state.search === '' ? null : filteredCities} searchType='forecast' description="5 Days"/>
+                    <Button city={this.state.search === '' ? null : filteredCities} searchType="forecast" description="5 Days"/>
                 </div>
             </div>
         </div>
