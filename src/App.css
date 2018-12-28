@@ -2,6 +2,7 @@
   background-color: lightgray;
 }
 
+/*Header of the main page*/
 .App-header {
   min-height: 45vh;
   display: flex;
@@ -12,6 +13,7 @@
   background-image: url('./background.jpg');
 }
 
+/*The element with the search bar*/
 .App-search{
   min-height: 55vh;
   padding-top: 70px;
@@ -26,16 +28,19 @@
   color: #61dafb;
 }
 
+/*The card cointaining the forecast/current weather data*/
 .weather-widget{
   background-color: #2374c0;
   color: white;
   margin-top: 3em;
 }
 
+/*Row of buttons below the search bar*/
 .buttonRow{
   margin-top: 1em;
 }
 
+/*Styles for the Button component*/
 .App-button{
   background-color: #2374c0;
   color: white;
@@ -46,22 +51,20 @@
   border-radius: 2vh;
 }
 
-::placeholder { 
-  color: white;
-  opacity: 1;
-}
-
+/*Card containing the search bar*/
 .searchCard{
   background-color: #2374c0;
   border-radius: 2vh;
 }
 
+/*Styling for the pinned data widgets*/
 .pinnedWidgetRow{
   padding-top: 60px;
   padding-bottom: 10px;
   border-bottom: 3px solid grey; 
 }
 
+/*Styling for the PinButton component*/
 .App-pinButton{
   background-color: lightgray;
   color: #2374c0;
@@ -71,4 +74,9 @@
 .textSpan{
   padding-top: 0.6em;
   color: #2374c0;
+}
+
+.Loading-Element{
+  color: #2374c0;
+  font-style: bold;
 }
